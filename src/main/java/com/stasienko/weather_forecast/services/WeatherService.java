@@ -26,22 +26,21 @@ public class WeatherService {
         this.objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
     }
 
-    public String getWeatherForecast(String city) {
+    public String getWeatherForecast(String city, int days) {
         if(city.equals("all")) {
             String[] cities = {"Warsaw", "Cracow", "Wroclaw", "Lodz", "Poznan"};
             StringBuilder result = new StringBuilder();
 
             for (String c : cities) {
-                result.append(getWeatherForecastForCity(c)).append("\n");
+                result.append(getWeatherForecastForCity(c, days)).append("\n");
             }
             return result.toString();
         } else {
-            return getWeatherForecastForCity(city);
+            return getWeatherForecastForCity(city, days);
         }
     }
 
-    private String getWeatherForecastForCity(String city) {
-        int days = 3;
+    private String getWeatherForecastForCity(String city, int days) {
 
         String urlTemplate = UriComponentsBuilder.fromHttpUrl(baseUrl)
                 .path("/forecast.json")
