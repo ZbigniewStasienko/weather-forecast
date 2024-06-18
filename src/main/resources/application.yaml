@@ -6,7 +6,7 @@ spring:
       indent_output:
         true
 weatherapi:
-  key: API_KEY
+  key: 3ff872cd78a841df9c7132440241806
   url: https://api.weatherapi.com/v1
 
 
