@@ -27,7 +27,21 @@ public class WeatherService {
     }
 
     public String getWeatherForecast(String city) {
-        int days = 4;
+        if(city.equals("all")) {
+            String[] cities = {"Warsaw", "Cracow", "Wroclaw", "Lodz", "Poznan"};
+            StringBuilder result = new StringBuilder();
+
+            for (String c : cities) {
+                result.append(getWeatherForecastForCity(c)).append("\n");
+            }
+            return result.toString();
+        } else {
+            return getWeatherForecastForCity(city);
+        }
+    }
+
+    private String getWeatherForecastForCity(String city) {
+        int days = 3;
 
         String urlTemplate = UriComponentsBuilder.fromHttpUrl(baseUrl)
                 .path("/forecast.json")
@@ -45,4 +59,5 @@ public class WeatherService {
             return "Error processing JSON";
         }
     }
+
 }
