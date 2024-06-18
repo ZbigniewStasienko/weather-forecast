@@ -14,8 +14,8 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("/weather")
-    public String getWeather(@RequestParam(defaultValue = "all") String city, @RequestParam(defaultValue = "3") int days) {
-        return weatherService.getWeatherForecast(city, days);
+    @GetMapping("/api/weather")
+    public String getWeather(@RequestParam(defaultValue = "all") String city) {
+        return weatherService.getWeatherForecast(city);
     }
 }
