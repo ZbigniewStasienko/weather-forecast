@@ -33,7 +33,7 @@ public class WeatherService {
         this.objectMapper = objectMapper;
     }
 
-    public String getWeatherForecast(String city) {
+    public String getWeatherForecastForSingleCity(String city) {
         try {
             WeatherAPIResponse weatherAPIResponse = getWeatherForecastForCity(city);
             ForecastForNext3DaysForCity forecastForNext3DaysForCity = convertFromWeatherApiDataToOutputModel(weatherAPIResponse);
@@ -41,6 +41,14 @@ public class WeatherService {
         } catch (JsonProcessingException e) {
             return "{}";
         }
+    }
+
+    public String getWeatherForecast(){
+        StringBuilder result = new StringBuilder();
+        for(String city : biggestPolishCities){
+            result.append(getWeatherForecastForSingleCity(city));
+        }
+        return result.toString();
     }
 
     private WeatherAPIResponse getWeatherForecastForCity(String city) {

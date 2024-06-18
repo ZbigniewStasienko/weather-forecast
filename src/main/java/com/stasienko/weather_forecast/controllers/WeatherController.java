@@ -14,8 +14,8 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("/api/weather")
-    public String getWeather(@RequestParam(defaultValue = "all") String city) {
-        return weatherService.getWeatherForecast(city);
+    @GetMapping("/api/weather/biggest_polish_cities")
+    public String getWeather() {
+        return weatherService.getWeatherForecast();
     }
 }
