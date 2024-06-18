@@ -15,16 +15,16 @@ public class ForecastForADay {
     private double uv;
     private String date;
 
-    public ForecastForADay(Day day, String date) {
-        maxTempCelsius = day.getMaxtemp_c();
-        minTempCelsius = day.getMintemp_c();
-        avgTempCelsius = day.getAvgtemp_c();
-        maxWind = day.getMaxwind_kph();
-        totalPrecipitation = day.getTotalprecip_mm();
-        totalSnow = day.getTotalsnow_cm();
-        avgVisibility = day.getAvgvis_km();
-        avgHumidity = day.getAvghumidity();
-        uv = day.getUv();
+    public ForecastForADay(double maxTempCelsius, double minTempCelsius, double avgTempCelsius, double maxWind, double totalPrecipitation, double totalSnow, double avgVisibility, int avgHumidity, double uv, String date) {
+        this.maxTempCelsius = maxTempCelsius;
+        this.minTempCelsius = minTempCelsius;
+        this.avgTempCelsius = avgTempCelsius;
+        this.maxWind = maxWind;
+        this.totalPrecipitation = totalPrecipitation;
+        this.totalSnow = totalSnow;
+        this.avgVisibility = avgVisibility;
+        this.avgHumidity = avgHumidity;
+        this.uv = uv;
         this.date = date;
     }
 

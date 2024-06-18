@@ -65,9 +65,19 @@ public class WeatherService {
 
     private ForecastForNext3DaysForCity convertFromWeatherApiDataToOutputModel(WeatherAPIResponse weatherAPIResponse) {
         ForecastForNext3Days forecastForNext3Days = new ForecastForNext3Days();
-        forecastForNext3Days.setDay1(new ForecastForADay(weatherAPIResponse.getForecast().getForecastday().get(1).getDay(), weatherAPIResponse.getForecast().getForecastday().get(1).getDate()));
-        forecastForNext3Days.setDay2(new ForecastForADay(weatherAPIResponse.getForecast().getForecastday().get(2).getDay(), weatherAPIResponse.getForecast().getForecastday().get(2).getDate()));
-        forecastForNext3Days.setDay3(new ForecastForADay(weatherAPIResponse.getForecast().getForecastday().get(3).getDay(), weatherAPIResponse.getForecast().getForecastday().get(3).getDate()));
+        
+        Day day1WeatherInfo = weatherAPIResponse.getForecast().getForecastday().get(1).getDay();
+        String day1Date = weatherAPIResponse.getForecast().getForecastday().get(1).getDate();
+        forecastForNext3Days.setDay1(new ForecastForADay(day1WeatherInfo.getMaxtemp_c(), day1WeatherInfo.getMaxtemp_c(), day1WeatherInfo.getAvgtemp_c(), day1WeatherInfo.getMaxwind_kph(), day1WeatherInfo.getTotalprecip_mm(), day1WeatherInfo.getTotalsnow_cm(), day1WeatherInfo.getAvgvis_km(), day1WeatherInfo.getAvghumidity(), day1WeatherInfo.getUv(), day1Date));
+
+        Day day2WeatherInfo = weatherAPIResponse.getForecast().getForecastday().get(2).getDay();
+        String day2Date = weatherAPIResponse.getForecast().getForecastday().get(2).getDate();
+        forecastForNext3Days.setDay2(new ForecastForADay(day2WeatherInfo.getMaxtemp_c(), day2WeatherInfo.getMaxtemp_c(), day2WeatherInfo.getAvgtemp_c(), day2WeatherInfo.getMaxwind_kph(), day2WeatherInfo.getTotalprecip_mm(), day2WeatherInfo.getTotalsnow_cm(), day2WeatherInfo.getAvgvis_km(), day2WeatherInfo.getAvghumidity(), day2WeatherInfo.getUv(), day2Date));
+        
+        Day day3WeatherInfo = weatherAPIResponse.getForecast().getForecastday().get(3).getDay();
+        String day3Date = weatherAPIResponse.getForecast().getForecastday().get(3).getDate();
+        forecastForNext3Days.setDay3(new ForecastForADay(day3WeatherInfo.getMaxtemp_c(), day3WeatherInfo.getMaxtemp_c(), day3WeatherInfo.getAvgtemp_c(), day3WeatherInfo.getMaxwind_kph(), day3WeatherInfo.getTotalprecip_mm(), day3WeatherInfo.getTotalsnow_cm(), day3WeatherInfo.getAvgvis_km(), day3WeatherInfo.getAvghumidity(), day3WeatherInfo.getUv(), day3Date));
+
         return new ForecastForNext3DaysForCity(forecastForNext3Days, weatherAPIResponse.getLocation().getName());
     }
 

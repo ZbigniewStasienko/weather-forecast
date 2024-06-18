@@ -1,5 +1,6 @@
 package com.stasienko.weather_forecast.controllers;
 
+import com.stasienko.weather_forecast.model.ForecastForNext3DaysForCity;
 import com.stasienko.weather_forecast.services.WeatherService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
