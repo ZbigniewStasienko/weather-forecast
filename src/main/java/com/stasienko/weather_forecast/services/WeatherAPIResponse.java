@@ -1,6 +1,7 @@
 package com.stasienko.weather_forecast.services;
 
 public class WeatherAPIResponse {
+
     private Location location;
     private Forecast forecast;
 

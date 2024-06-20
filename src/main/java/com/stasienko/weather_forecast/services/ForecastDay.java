@@ -1,6 +1,7 @@
 package com.stasienko.weather_forecast.services;
 
 public class ForecastDay {
+
     private String date;
     private long date_epoch;
     private Day day;

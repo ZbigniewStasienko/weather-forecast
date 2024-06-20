@@ -3,6 +3,7 @@ package com.stasienko.weather_forecast.services;
 import java.util.List;
 
 public class Forecast {
+
     private List<ForecastDay> forecastday;
 
     public List<ForecastDay> getForecastday() {

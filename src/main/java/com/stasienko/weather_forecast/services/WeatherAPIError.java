@@ -1,6 +1,7 @@
 package com.stasienko.weather_forecast.services;
 
 public class WeatherAPIError {
+
     private String code;
     private String message;
 

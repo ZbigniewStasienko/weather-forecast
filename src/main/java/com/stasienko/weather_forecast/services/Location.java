@@ -1,6 +1,7 @@
 package com.stasienko.weather_forecast.services;
 
 public class Location {
+
     private String name;
     private String region;
     private String country;
