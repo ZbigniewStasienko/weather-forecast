@@ -2,7 +2,22 @@
 
 ## Application Description
 
-This Spring Boot application provides a REST API that returns a weather forecast for the next 3 days for the five largest cities in Poland. It utilizes the WeatherAPI service to fetch weather data.
+This Spring Boot application provides a simple REST API that returns a weather forecast for the next 3 days for the five largest cities in Poland. It utilizes the WeatherAPI service to fetch weather data.
+
+## Usage
+
+After the application starts correctly, the API provides the following endpoints to retrieve weather information and API documentation:
+
+1. **Get Weather Forecast for Largest Polish Cities**
+    - **URL:** [http://localhost:8080/api/weather/biggest_polish_cities](http://localhost:8080/api/weather/biggest_polish_cities)
+    - **Method:** `GET`
+    - **Description:** Retrieves a 3-day weather forecast for the five largest cities in Poland.
+
+2. **API Documentation Endpoints:**
+    - **Swagger JSON:** [http://localhost:8080/docs/swagger](http://localhost:8080/docs/swagger)
+    - **Swagger YAML:** [http://localhost:8080/docs/swagger.yaml](http://localhost:8080/docs/swagger.yaml)
+    - **Swagger UI:** [http://localhost:8080/swagger-ui-weather-forecast.html](http://localhost:8080/swagger-ui-weather-forecast.html)
+
 
 ## Prerequisites
 
@@ -48,13 +63,13 @@ The **mvnw** file, listed in the output, is crucial as it is used to run our app
 
 ### 3. Run the application
 
-After ensuring we are in the correct directory, we can run the following command on Linux:
+After ensuring we are in the correct directory, we can run the following command on **Linux**:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-On Windows, the command would look quite similar, but we have to change the slash to a backslash:
+On **Windows**, the command would look quite similar, but we have to change the slash to a backslash:
 ```bash
 .\mvnw spring-boot:run
 ```
@@ -65,4 +80,8 @@ If the application starts correctly, you will see multiple info logs in the term
 INFO 11979 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
 INFO 11979 --- [main] c.s.w.WeatherForecastApplication         : Started WeatherForecastApplication in 1.253 seconds (process running for 1.423)
 ```
+
+
+
+
 
