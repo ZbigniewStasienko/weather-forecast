@@ -12,6 +12,21 @@ public class Day {
     private int avghumidity;
     private double uv;
 
+    public Day(double maxtemp_c, double mintemp_c, double avgtemp_c, double maxwind_kph, double totalprecip_mm, double avgvis_km, double totalsnow_cm, int avghumidity, double uv) {
+        this.maxtemp_c = maxtemp_c;
+        this.mintemp_c = mintemp_c;
+        this.avgtemp_c = avgtemp_c;
+        this.maxwind_kph = maxwind_kph;
+        this.totalprecip_mm = totalprecip_mm;
+        this.avgvis_km = avgvis_km;
+        this.totalsnow_cm = totalsnow_cm;
+        this.avghumidity = avghumidity;
+        this.uv = uv;
+    }
+
+    public Day() {
+    }
+
     public double getMaxtemp_c() {
         return maxtemp_c;
     }

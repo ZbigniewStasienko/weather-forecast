@@ -5,6 +5,14 @@ public class ForecastDay {
     private long date_epoch;
     private Day day;
 
+    public ForecastDay(String date, Day day) {
+        this.date = date;
+        this.day = day;
+    }
+
+    public ForecastDay() {
+    }
+
     public long getDate_epoch() {
         return date_epoch;
     }

@@ -75,7 +75,7 @@ public class WeatherService {
         }
     }
 
-    private ForecastForNext3DaysForCity convertFromWeatherApiDataToOutputModel(WeatherAPIResponse weatherAPIResponse) {
+    public ForecastForNext3DaysForCity convertFromWeatherApiDataToOutputModel(WeatherAPIResponse weatherAPIResponse) {
 
         ForecastForNext3DaysForCity forecastForNext3DaysForCity = new ForecastForNext3DaysForCity();
 
