@@ -2,18 +2,18 @@
 
 ## Application Description
 
-This Spring Boot application provides a simple REST API that returns a weather forecast for the next 3 days for the five largest cities in Poland. It utilizes the WeatherAPI service to fetch weather data.
+This Spring Boot application provides a simple REST API that returns a weather forecast for the next 3 days for the five largest cities in Poland. It utilizes the [WeatherAPI](https://www.weatherapi.com/) service to fetch weather data.
 
 ## Usage
 
 After the application starts correctly, the API provides the following endpoints to retrieve weather information and API documentation:
 
-1. **Get Weather Forecast for Largest Polish Cities**
+1. **Get weather forecast for largest Polish cities**
     - **URL:** [http://localhost:8080/api/weather/biggest_polish_cities](http://localhost:8080/api/weather/biggest_polish_cities)
     - **Method:** `GET`
     - **Description:** Retrieves a 3-day weather forecast for the five largest cities in Poland.
 
-2. **API Documentation Endpoints:**
+2. **API documentation endpoints:**
     - **Swagger JSON:** [http://localhost:8080/docs/swagger](http://localhost:8080/docs/swagger)
     - **Swagger YAML:** [http://localhost:8080/docs/swagger.yaml](http://localhost:8080/docs/swagger.yaml)
     - **Swagger UI:** [http://localhost:8080/swagger-ui-weather-forecast.html](http://localhost:8080/swagger-ui-weather-forecast.html)
