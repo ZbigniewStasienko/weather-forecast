@@ -28,7 +28,7 @@ public class WeatherService {
 
     private static final List<String> biggestPolishCities = List.of(new String[]{"Warsaw", "Cracow", "Wroclaw", "Lodz", "Poznan"});
 
-    private static final int days = 4;
+    private static final int days = 3;
 
     private static final Logger logger = LoggerFactory.getLogger(WeatherService.class);
 
@@ -81,16 +81,16 @@ public class WeatherService {
 
         forecastForNext3DaysForCity.setCityName(weatherAPIResponse.getLocation().getName());
 
-        Day day = weatherAPIResponse.getForecast().getForecastday().get(1).getDay();
-        String date = weatherAPIResponse.getForecast().getForecastday().get(1).getDate();
+        Day day = weatherAPIResponse.getForecast().getForecastday().get(0).getDay();
+        String date = weatherAPIResponse.getForecast().getForecastday().get(0).getDate();
         forecastForNext3DaysForCity.setDay1(new ForecastForADay(day.getMaxtemp_c(), day.getMaxtemp_c(), day.getAvgtemp_c(), day.getMaxwind_kph(), day.getTotalprecip_mm(), day.getTotalsnow_cm(), day.getAvgvis_km(), day.getAvghumidity(), day.getUv(), date));
+
+        day = weatherAPIResponse.getForecast().getForecastday().get(1).getDay();
+        date = weatherAPIResponse.getForecast().getForecastday().get(1).getDate();
+        forecastForNext3DaysForCity.setDay2(new ForecastForADay(day.getMaxtemp_c(), day.getMaxtemp_c(), day.getAvgtemp_c(), day.getMaxwind_kph(), day.getTotalprecip_mm(), day.getTotalsnow_cm(), day.getAvgvis_km(), day.getAvghumidity(), day.getUv(), date));
 
         day = weatherAPIResponse.getForecast().getForecastday().get(2).getDay();
         date = weatherAPIResponse.getForecast().getForecastday().get(2).getDate();
-        forecastForNext3DaysForCity.setDay2(new ForecastForADay(day.getMaxtemp_c(), day.getMaxtemp_c(), day.getAvgtemp_c(), day.getMaxwind_kph(), day.getTotalprecip_mm(), day.getTotalsnow_cm(), day.getAvgvis_km(), day.getAvghumidity(), day.getUv(), date));
-
-        day = weatherAPIResponse.getForecast().getForecastday().get(3).getDay();
-        date = weatherAPIResponse.getForecast().getForecastday().get(3).getDate();
         forecastForNext3DaysForCity.setDay3(new ForecastForADay(day.getMaxtemp_c(), day.getMaxtemp_c(), day.getAvgtemp_c(), day.getMaxwind_kph(), day.getTotalprecip_mm(), day.getTotalsnow_cm(), day.getAvgvis_km(), day.getAvghumidity(), day.getUv(), date));
 
         return forecastForNext3DaysForCity;
