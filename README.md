@@ -65,7 +65,7 @@ The **mvnw** file, listed in the output, is crucial as it is used to run our app
 
 To get an API key from WeatherAPI.com and set the proper fields in the "API Response Fields" directory, follow these steps:
 
-1. Sign Up: Go to WeatherAPI.com and sign up for an account.
+1. Sign Up: Go to [WeatherAPI](https://www.weatherapi.com/) and sign up for an free account.
 2. Generate API Key: Once logged in, navigate to the dashboard to generate your API key.
 3. Select API Response Fields:
 
