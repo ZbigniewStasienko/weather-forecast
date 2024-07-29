@@ -2,7 +2,7 @@
 
 ## Application Description
 
-This Spring Boot application provides a simple REST API that returns a weather forecast for the next 3 days for the five largest cities in Poland. It utilizes the [WeatherAPI](https://www.weatherapi.com/) service to fetch weather data.
+This Spring Boot application provides a simple REST API that returns a weather forecast for the next 3 days (starting from today) for the five largest cities in Poland. It utilizes the [WeatherAPI](https://www.weatherapi.com/) service to fetch weather data.
 
 ## Usage
 
@@ -61,7 +61,26 @@ On Windows, you would use dir to achieve a similar result.
 
 The **mvnw** file, listed in the output, is crucial as it is used to run our application.
 
-### 3. Run the application
+### 3. Generate your API key
+
+To get an API key from WeatherAPI.com and set the proper fields in the "API Response Fields" directory, follow these steps:
+
+1. Sign Up: Go to WeatherAPI.com and sign up for an account.
+2. Generate API Key: Once logged in, navigate to the dashboard to generate your API key.
+3. Select API Response Fields:
+
+![Screenshot from 2024-07-29 14-18-12](https://github.com/user-attachments/assets/585c57a3-ade6-4f3e-b527-ada2a04546b7)
+
+Ensure the rest of the fields are unticked and save changes.
+
+4. Paste your key in application.yaml file.
+```bash
+weatherapi:
+  key: 98ba5f398dcb4336af5120041242907
+```
+Change 98ba5f398dcb4336af5120041242907 to your key.
+
+### 4. Run the application
 
 After ensuring we are in the correct directory, we can run the following command on **Linux**:
 
